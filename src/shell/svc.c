@@ -66,8 +66,8 @@ static int build_topic (struct shell_svc *svc,
 {
     if (snprintf (buf,
                   len,
-                  "%d-shell-%ju%s%s",
-                  svc->uid,
+                  "%lu-shell-%ju%s%s",
+                  (unsigned long) svc->uid,
                   (uintmax_t)svc->shell->info->jobid,
                   method ? "." : "",
                   method ? method : "") >= len) {
